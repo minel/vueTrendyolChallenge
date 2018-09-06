@@ -11,17 +11,17 @@ export default new Router({
     {
       path: '/',
       component: CreateSession,
-      name: CreateSession,
+      name: 'CreateSession',
     },
     {
       path: '/ScrumMaster',
       component: ScrumMaster,
-      name: ScrumMaster,
+      name: 'ScrumMaster',
     },
     {
       path: '/Developer',
       component: Developer,
-      name: Developer,
+      name: 'Developer',
     },
   ],
 });
