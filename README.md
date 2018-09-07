@@ -9,7 +9,7 @@
 npm install -g json-server
 
 # go "server" directory and run
-json-server --watch db.json
+json-server --watch db.json --host 0.0.0.0
 
 # open another terminal and follow README.md under the "client" directory
 ```

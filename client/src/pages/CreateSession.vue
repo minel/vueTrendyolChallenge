@@ -2,6 +2,10 @@
   <div class="createSession">
     <form id="createSession">
       <div class="textBoxes">
+        <div id="hostInfo">
+          <span>Please enter your IP address before you start:</span>  
+          <input id="host" type="text" required maxlength="15" placeholder="type ipconfig or ifconfig result" />
+        </div>
         <span>Session Name:</span>
         <input id="sessionName" type="text" required maxlength="200" />
         <span>Number of Voters:</span>
@@ -29,6 +33,7 @@ export default {
       '_createSession',
     ]),
     createSession() {
+      const host = document.getElementById('host').value.trim();
       let session = {
         sessionName: '',
         voters: '',
@@ -36,11 +41,10 @@ export default {
       };
       session.sessionName = document.getElementById('sessionName').value.trim();
       session.voters = document.getElementById('voters').value.trim();
-      //session.storyList = document.getElementById('storyList').value.trim().split('\n');
       document.getElementById('storyList').value.trim().split('\n').forEach(elem => {
         session.storyList.push({name: elem, value: 0});
       });
-      this._createSession(session);
+      this._createSession({ host, session });
       this.$router.push({ name: 'ScrumMaster', params: { sessionName : session.sessionName } });
     },
   },
@@ -52,6 +56,11 @@ export default {
 
 .createSession p {
   text-align: left;
+}
+
+#hostInfo {
+  text-align: right;
+  margin-bottom: 5vh;
 }
 
 .textBoxes input {

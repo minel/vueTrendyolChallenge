@@ -37,6 +37,17 @@
         }
       ],
       "id": 2
+    },
+    {
+      "sessionName": "we",
+      "voters": "254",
+      "storyList": [
+        {
+          "name": "wer",
+          "value": 0
+        }
+      ],
+      "id": 3
     }
   ]
 }

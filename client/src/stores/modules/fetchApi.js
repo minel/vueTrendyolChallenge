@@ -56,9 +56,10 @@ const actions = {
       referrer: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(payload.data), // body data type must match "Content-Type" header
     };
+    const url = `http://${payload.host}:3000/sessions`;
     return new Promise((resolve, reject) => {
       commit('fetchWaiting');
-      fetch(payload.url, requestParam)
+      fetch(url, requestParam)
         .then(res => res.json()).then((res) => {
           commit('fetchSuccess');
           resolve(res.Data);

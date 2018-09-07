@@ -20,9 +20,8 @@ const mutations = {
 };
 
 const actions = {
-  _createSession({ commit, dispatch }, data) {
-    const url = 'http://localhost:3000/sessions';
-    dispatch('postData', { url, data })
+  _createSession({ commit, dispatch }, payload) {
+    dispatch('postData', payload)
       .then((data) => {
         commit('setSession', data);
         console.log('dönen data', data);
