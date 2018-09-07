@@ -12,7 +12,7 @@
         <textarea name="" id="storyList"></textarea>
       </div>
       <div class="submit">
-        <input @click="createSession" type="submit" name="" id="button" value="Start Session">
+        <input @click="createSession" type="button" name="" id="button" value="Start Session">
       </div>
     </form>
   </div>
@@ -36,10 +36,12 @@ export default {
       };
       session.sessionName = document.getElementById('sessionName').value.trim();
       session.voters = document.getElementById('voters').value.trim();
-      session.storyList = document.getElementById('storyList').value.trim().split('\n');
+      //session.storyList = document.getElementById('storyList').value.trim().split('\n');
+      document.getElementById('storyList').value.trim().split('\n').forEach(elem => {
+        session.storyList.push({name: elem, value: 0});
+      });
       this._createSession(session);
-      //ScrumMaster sayfasına sessionName bilgisiyle gitmeli ki o name e ait storyler sayfada gösterilsin.
-      this.$router.push({ name: 'ScrumMaster' });
+      this.$router.push({ name: 'ScrumMaster', params: { sessionName : session.sessionName } });
     },
   },
 }
@@ -53,7 +55,7 @@ export default {
 }
 
 .textBoxes input {
-  width: 30%;
+  width: 30vw;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

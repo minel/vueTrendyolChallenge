@@ -20,8 +20,13 @@ const mutations = {
 };
 
 const actions = {
-  _createSession({ commit }, data) {
-    commit('setSession', data);
+  _createSession({ commit, dispatch }, data) {
+    const url = 'http://localhost:3000/sessions';
+    dispatch('postData', { url, data })
+      .then((data) => {
+        commit('setSession', data);
+        console.log('dönen data', data);
+      });
   },
 };
 

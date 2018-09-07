@@ -1,0 +1,42 @@
+{
+  "sessions": [
+    {
+      "sessionName": "er",
+      "voters": "23",
+      "storyList": [
+        {
+          "name": "a1",
+          "value": 0
+        },
+        {
+          "name": "a2",
+          "value": 0
+        },
+        {
+          "name": "s2",
+          "value": 0
+        }
+      ],
+      "id": 1
+    },
+    {
+      "sessionName": "dsf",
+      "voters": "324",
+      "storyList": [
+        {
+          "name": "d2",
+          "value": 0
+        },
+        {
+          "name": "t43",
+          "value": 0
+        },
+        {
+          "name": "5t",
+          "value": 0
+        }
+      ],
+      "id": 2
+    }
+  ]
+}
